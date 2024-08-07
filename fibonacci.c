@@ -3,16 +3,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-unsigned long long fibonacci_rec(int n) {
+long long fibonacci_rec(int n) {
   if (n <= 1)
     return n;
   return fibonacci_rec(n - 1) + fibonacci_rec(n - 2);
 }
 
-unsigned long long fibonacci_it(int n) {
+long long fibonacci_it(int n) {
   if (n <= 1)
     return n;
-  unsigned long long a = 0, b = 1, c;
+  long long a = 0, b = 1, c;
   for (int i = 2; i <= n; i++) {
     c = a + b;
     a = b;
@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  unsigned long long result;
+  long long result;
   if (strcmp(method, "recursive") == 0) {
     result = fibonacci_rec(n);
   } else {
